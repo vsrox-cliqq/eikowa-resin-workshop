@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Preserving Memories: Resin Time Capsules | Eikowa Contemporary</title>
-  <meta name="description" content="A hands-on workshop where participants transform photographs and personal ephemera into sculptural resin keepsakes. 8 February 2026, Daguerre Hall, Museo Camera.">
+  <meta name="description" content="A hands-on workshop where participants transform photographs and personal ephemera into sculptural resin keepsakes. 2 August 2026, Daguerre Hall, Museo Camera.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,23 +45,20 @@
 
     /* ── Site header ──────────────────────────────────────────────── */
     .site-header {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
       padding: 1.25rem 2.5rem;
       border-bottom: 1px solid var(--rule);
       background: var(--white);
-      gap: 1rem;
     }
 
     .header-logo {
       display: flex;
       align-items: center;
       text-decoration: none;
+      flex-shrink: 0;
     }
-
-    .header-logo--left  { justify-content: flex-start; }
-    .header-logo--right { justify-content: flex-end; }
 
     .header-logo img {
       display: block;
@@ -79,12 +76,13 @@
       color: var(--rule);
       text-align: center;
       white-space: nowrap;
+      padding: 0 1rem;
     }
 
     @media (max-width: 540px) {
       .site-header { padding: 1rem 1.25rem; }
-      .logo-eikowa { height: 38px; }
-      .logo-museo  { height: 42px; }
+      .logo-eikowa { height: 36px; }
+      .logo-museo  { height: 40px; }
       .header-center { display: none; }
     }
 
@@ -854,12 +852,12 @@
 
   <!-- Site header -->
   <header class="site-header">
-    <a href="https://contemporary.eikowa.com" class="header-logo header-logo--left" target="_blank" rel="noopener" aria-label="Eikowa Contemporary">
-      <img src="images/logo-eikowa.png" alt="Eikowa Contemporary" class="logo-eikowa">
+    <a href="https://www.museocamera.in" class="header-logo" target="_blank" rel="noopener" aria-label="Museo Camera">
+      <img src="images/logo-museo.png" alt="Museo Camera, Centre for the Photographic Arts" class="logo-museo">
     </a>
     <span class="header-center">&times;</span>
-    <a href="https://www.museocamera.in" class="header-logo header-logo--right" target="_blank" rel="noopener" aria-label="Museo Camera">
-      <img src="images/logo-museo.png" alt="Museo Camera, Centre for the Photographic Arts" class="logo-museo">
+    <a href="https://contemporary.eikowa.com" class="header-logo" target="_blank" rel="noopener" aria-label="Eikowa Contemporary">
+      <img src="images/logo-eikowa.png" alt="Eikowa Contemporary" class="logo-eikowa">
     </a>
   </header>
 
@@ -885,7 +883,7 @@
     </div>
     <div class="meta-item">
       <p class="meta-label">When</p>
-      <p class="meta-value">8 February 2026 <span>3:30–5:30 pm, 2 hours</span></p>
+      <p class="meta-value">2 August 2026 <span>3:30–5:30 pm, 2 hours</span></p>
     </div>
     <div class="meta-item">
       <p class="meta-label">Who</p>
@@ -940,7 +938,7 @@
         <h2>You're registered.</h2>
         <p>Thank you for registering. We've received your details and payment reference.</p>
         <p>We will confirm your seat within <strong>24-48 hours</strong> after tallying your payment and registration.</p>
-        <p>See you on <strong>8 February 2026</strong> at Daguerre Hall, Museo Camera.</p>
+        <p>See you on <strong>2 August 2026</strong> at Daguerre Hall, Museo Camera.</p>
       </div>
 
       <!-- The actual form -->
