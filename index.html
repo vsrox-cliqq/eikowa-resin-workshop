@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preserving Memories: Resin Time Capsules | Eikowa Contemporary</title>
+  <meta name="description" content="A hands-on workshop where participants transform photographs and personal ephemera into sculptural resin keepsakes. 8 February 2026, Daguerre Hall, Museo Camera.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Reset & base ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:   #F9F6F1;
+      --white:   #FFFFFF;
+      --ink:     #1A1806;
+      --ink-mid: #3D3B2E;
+      --ink-lt:  #7A7869;
+      --amber:   #B87333;
+      --amber-lt:#D4A574;
+      --rule:    #E2DCCC;
+      --form-bg: #FDFCF9;
+
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans:  'DM Sans', system-ui, sans-serif;
+
+      --max: 740px;
+      --gap: clamp(1.5rem, 4vw, 2.5rem);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Site header ──────────────────────────────────────────────── */
+    .site-header {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 1.25rem 2.5rem;
+      border-bottom: 1px solid var(--rule);
+      background: var(--white);
+      gap: 1rem;
+    }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .header-logo--left  { justify-content: flex-start; }
+    .header-logo--right { justify-content: flex-end; }
+
+    .header-logo img {
+      display: block;
+      width: auto;
+    }
+
+    .logo-eikowa  { height: 52px; }
+    .logo-museo   { height: 56px; }
+
+    .header-center {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--rule);
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 540px) {
+      .site-header { padding: 1rem 1.25rem; }
+      .logo-eikowa { height: 38px; }
+      .logo-museo  { height: 42px; }
+      .header-center { display: none; }
+    }
+
+    /* ── Hero image ───────────────────────────────────────────────── */
+    .hero-image {
+      width: 100%;
+      aspect-ratio: 16 / 7;
+      overflow: hidden;
+      background: var(--cream);
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 60%;
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .hero-image { aspect-ratio: 4 / 3; }
+    }
+
+    /* ── Hero ─────────────────────────────────────────────────────── */
+    .hero {
+      background: var(--white);
+      border-bottom: 1px solid var(--rule);
+      padding: clamp(2.5rem, 6vw, 4rem) 2rem clamp(2rem, 5vw, 3.5rem);
+      text-align: center;
+    }
+
+    .collab-line {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-lt);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      row-gap: 0.4rem;
+    }
+
+    .collab-line::before,
+    .collab-line::after {
+      content: '';
+      display: block;
+      width: 2rem;
+      height: 1px;
+      background: var(--rule);
+      flex-shrink: 0;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(2rem, 5.5vw, 3.5rem);
+      line-height: 1.15;
+      color: var(--ink);
+      max-width: 620px;
+      margin: 0 auto 1rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--ink-mid);
+    }
+
+    .hero-sub {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--ink-lt);
+      margin-top: 0.5rem;
+    }
+
+    /* ── Meta strip ───────────────────────────────────────────────── */
+    .meta-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .meta-item {
+      padding: 1.75rem 1.25rem;
+      border-right: 1px solid var(--rule);
+      text-align: center;
+    }
+    .meta-item:last-child { border-right: none; }
+
+    .meta-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-lt);
+      margin-bottom: 0.35rem;
+      font-weight: 500;
+    }
+
+    .meta-value {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+
+    .meta-value span {
+      display: block;
+      font-weight: 300;
+      font-size: 0.9rem;
+      color: var(--ink-mid);
+      font-family: var(--sans);
+      font-style: normal;
+      letter-spacing: 0;
+    }
+
+    /* ── Body sections ────────────────────────────────────────────── */
+    .section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: clamp(2.5rem, 6vw, 4rem) 2rem;
+    }
+
+    .section + .section {
+      border-top: 1px solid var(--rule);
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+    }
+
+    .section h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(1.5rem, 3.5vw, 2rem);
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+      line-height: 1.25;
+    }
+
+    .section p {
+      color: var(--ink-mid);
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .section p + p { margin-top: 1rem; }
+
+    .callout {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      padding: 1.25rem 1.5rem;
+      margin-top: 1.75rem;
+      font-size: 0.88rem;
+      color: var(--ink-mid);
+      line-height: 1.7;
+    }
+
+    .callout strong { color: var(--ink); font-weight: 500; }
+
+    /* ── Divider ──────────────────────────────────────────────────── */
+    .ornament {
+      text-align: center;
+      color: var(--amber-lt);
+      font-size: 1.2rem;
+      letter-spacing: 0.6em;
+      padding: 0.5rem 0;
+    }
+
+    /* ── Form ─────────────────────────────────────────────────────── */
+    .form-section {
+      background: var(--form-bg);
+      border-top: 1px solid var(--rule);
+      padding: clamp(2.5rem, 6vw, 4rem) 2rem clamp(3rem, 7vw, 5rem);
+    }
+
+    .form-wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .form-header {
+      margin-bottom: 2.5rem;
+    }
+
+    .form-header h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-header p {
+      font-size: 0.88rem;
+      color: var(--ink-lt);
+    }
+
+    /* Field groups */
+    .field-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 1.25rem;
+    }
+    @media (max-width: 520px) { .field-group { grid-template-columns: 1fr; } }
+
+    .field-group.single { grid-template-columns: 1fr; }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .field label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-lt);
+      font-weight: 500;
+    }
+
+    .field label .req { color: var(--amber); margin-left: 2px; }
+
+    .field input,
+    .field select {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      padding: 0.7rem 0.85rem;
+      font-family: var(--sans);
+      font-size: 0.92rem;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.18s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .field select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A7869' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.85rem center;
+      padding-right: 2.25rem;
+    }
+
+    .field input:focus,
+    .field select:focus {
+      border-color: var(--amber);
+      box-shadow: 0 0 0 3px rgba(184, 115, 51, 0.08);
+    }
+
+    .field input::placeholder { color: var(--rule); }
+
+    /* Section divider within form */
+    .form-divider {
+      margin: 2.25rem 0 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .form-divider span {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-lt);
+      white-space: nowrap;
+      font-weight: 500;
+    }
+
+    .form-divider::before,
+    .form-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    /* Radio & checkbox groups */
+    .choice-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 0.2rem;
+    }
+
+    .choice-group.inline { flex-direction: row; flex-wrap: wrap; gap: 0.75rem; }
+
+    .choice-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      cursor: pointer;
+      padding: 0.65rem 0.9rem;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      background: var(--white);
+      transition: border-color 0.15s, background 0.15s;
+      font-size: 0.9rem;
+      color: var(--ink-mid);
+      line-height: 1.4;
+    }
+
+    .choice-label:hover { border-color: var(--amber-lt); }
+
+    .choice-label input[type="radio"],
+    .choice-label input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      border: 1.5px solid var(--rule);
+      border-radius: 50%;
+      margin-top: 1px;
+      cursor: pointer;
+      transition: all 0.15s;
+      position: relative;
+    }
+
+    .choice-label input[type="checkbox"] { border-radius: 2px; }
+
+    .choice-label input[type="radio"]:checked,
+    .choice-label input[type="checkbox"]:checked {
+      background: var(--amber);
+      border-color: var(--amber);
+    }
+
+    .choice-label input[type="radio"]:checked::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: white;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .choice-label input[type="checkbox"]:checked::after {
+      content: '';
+      position: absolute;
+      width: 9px;
+      height: 5px;
+      border-left: 1.5px solid white;
+      border-bottom: 1.5px solid white;
+      top: 44%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .choice-label:has(input:checked) {
+      border-color: var(--amber-lt);
+      background: #FDF7F0;
+    }
+
+    /* Other input within a choice */
+    .other-input {
+      border: none;
+      border-bottom: 1px solid var(--rule);
+      border-radius: 0;
+      padding: 0.2rem 0.4rem;
+      font-family: var(--sans);
+      font-size: 0.88rem;
+      color: var(--ink);
+      background: transparent;
+      outline: none;
+      width: 140px;
+      display: none;
+    }
+
+    .other-input.visible { display: inline-block; }
+
+    /* Question wrapper */
+    .q-wrap {
+      margin-bottom: 1.5rem;
+    }
+
+    .q-wrap + .q-wrap { margin-top: 0; }
+
+    .q-label {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.65rem;
+      display: flex;
+      gap: 0.25rem;
+    }
+
+    .q-label .req { color: var(--amber); }
+
+    /* Acknowledgements */
+    .ack-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .ack-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      cursor: pointer;
+      font-size: 0.88rem;
+      color: var(--ink-mid);
+      line-height: 1.5;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      background: var(--white);
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .ack-label:hover { border-color: var(--amber-lt); }
+    .ack-label:has(input:checked) { border-color: var(--amber-lt); background: #FDF7F0; }
+
+    .ack-label input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      border: 1.5px solid var(--rule);
+      border-radius: 2px;
+      margin-top: 0.1rem;
+      cursor: pointer;
+      transition: all 0.15s;
+      position: relative;
+    }
+
+    .ack-label input[type="checkbox"]:checked {
+      background: var(--amber);
+      border-color: var(--amber);
+    }
+
+    .ack-label input[type="checkbox"]:checked::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 6px;
+      border-left: 2px solid white;
+      border-bottom: 2px solid white;
+      top: 44%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    /* ── Payment section ──────────────────────────────────────────── */
+    .payment-block {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      padding: 1.75rem;
+      margin-top: 2.25rem;
+    }
+
+    .payment-block h3 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 1.2rem;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+
+    .payment-block .fee-line {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--ink);
+      margin: 0.5rem 0 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .payment-block .fee-line small {
+      font-size: 1rem;
+      color: var(--ink-lt);
+      font-family: var(--sans);
+      font-weight: 300;
+    }
+
+    .payment-note {
+      font-size: 0.82rem;
+      color: var(--ink-lt);
+      line-height: 1.6;
+      border-top: 1px solid var(--rule);
+      padding-top: 1rem;
+      margin-top: 1rem;
+    }
+
+    /* ── Submit button ────────────────────────────────────────────── */
+    .submit-row {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .btn-submit {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--ink);
+      border: none;
+      padding: 1rem 2.5rem;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.15s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-submit:hover { background: var(--ink-mid); }
+    .btn-submit:active { transform: scale(0.98); }
+
+    .btn-submit:disabled {
+      background: var(--ink-lt);
+      cursor: not-allowed;
+    }
+
+    .btn-submit .btn-text { transition: opacity 0.2s; }
+    .btn-submit.loading .btn-text { opacity: 0; }
+
+    .btn-spinner {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+
+    .btn-submit.loading .btn-spinner { display: block; }
+
+    @keyframes spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--ink-lt);
+      line-height: 1.5;
+    }
+
+    /* ── Error messages ───────────────────────────────────────────── */
+    .error-msg {
+      font-size: 0.75rem;
+      color: #C0392B;
+      margin-top: 0.25rem;
+      display: none;
+    }
+    .error-msg.visible { display: block; }
+
+    /* ── Success state ────────────────────────────────────────────── */
+    .success-screen {
+      display: none;
+      text-align: center;
+      padding: clamp(3rem, 8vw, 5.5rem) 2rem;
+    }
+
+    .success-screen.visible { display: block; }
+
+    .success-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #F0F7F0;
+      border: 1px solid #B8D4B8;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
+    }
+
+    .success-screen h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+    }
+
+    .success-screen p {
+      color: var(--ink-mid);
+      font-size: 0.92rem;
+      max-width: 440px;
+      margin: 0 auto 0.75rem;
+      line-height: 1.7;
+    }
+
+    .payment-next {
+      max-width: 480px;
+      margin: 2rem auto 0;
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      padding: 1.75rem;
+      text-align: left;
+    }
+
+    .payment-next h3 {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .payment-step {
+      display: flex;
+      gap: 0.85rem;
+      margin-bottom: 0.9rem;
+      font-size: 0.88rem;
+      color: var(--ink-mid);
+      line-height: 1.5;
+    }
+
+    .step-num {
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      border-radius: 50%;
+      background: var(--amber);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.05rem;
+    }
+
+    .upi-block {
+      background: var(--cream);
+      border: 1px dashed var(--amber-lt);
+      border-radius: 2px;
+      padding: 0.85rem 1rem;
+      margin: 1rem 0;
+      font-family: var(--sans);
+      font-size: 0.92rem;
+      color: var(--ink);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Footer ───────────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--rule);
+      background: var(--white);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .footer-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-logo-img {
+      height: 36px;
+      width: auto;
+      opacity: 0.55;
+      filter: grayscale(1);
+    }
+
+    .footer-logo-museo { height: 40px; }
+
+    .footer-x {
+      color: var(--rule);
+      font-size: 0.75rem;
+    }
+
+    .footer-tagline {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--ink-lt);
+      margin-bottom: 0.65rem;
+    }
+
+    footer p {
+      font-size: 0.75rem;
+      color: var(--ink-lt);
+      line-height: 1.6;
+    }
+
+    footer a {
+      color: var(--ink-lt);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* ── QR code placeholder ──────────────────────────────────────── */
+    .qr-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 1.5rem;
+      border: 1px dashed var(--amber-lt);
+      border-radius: 2px;
+      background: var(--cream);
+      margin-bottom: 1.25rem;
+    }
+
+    .qr-placeholder {
+      width: 140px;
+      height: 140px;
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: var(--ink-lt);
+      text-align: center;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .qr-caption {
+      font-size: 0.8rem;
+      color: var(--ink-mid);
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .qr-caption strong { color: var(--ink); font-weight: 500; }
+
+    /* ── Utility ──────────────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .meta-strip { grid-template-columns: 1fr 1fr; }
+      .meta-item:nth-child(2) { border-right: none; }
+      .meta-item:nth-child(3) { border-top: 1px solid var(--rule); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Site header -->
+  <header class="site-header">
+    <a href="https://contemporary.eikowa.com" class="header-logo header-logo--left" target="_blank" rel="noopener" aria-label="Eikowa Contemporary">
+      <img src="images/logo-eikowa.png" alt="Eikowa Contemporary" class="logo-eikowa">
+    </a>
+    <span class="header-center">&times;</span>
+    <a href="https://www.museocamera.in" class="header-logo header-logo--right" target="_blank" rel="noopener" aria-label="Museo Camera">
+      <img src="images/logo-museo.png" alt="Museo Camera, Centre for the Photographic Arts" class="logo-museo">
+    </a>
+  </header>
+
+  <!-- Hero image -->
+  <div class="hero-image">
+    <img src="images/hero.jpg" alt="Crystal-clear resin blocks preserving photographs, pressed flowers, handwritten letters, and vintage tickets">
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <p class="collab-line">Eikowa Contemporary &times; Museo Camera &times; Harman Taneja</p>
+    <h1>Preserving Memories:<br><em>Resin Time Capsules</em></h1>
+    <p class="hero-sub">A hands-on workshop in sculptural memory-keeping</p>
+  </section>
+
+
+  <!-- Meta strip -->
+  <div class="meta-strip">
+    <div class="meta-item">
+      <p class="meta-label">Where</p>
+      <p class="meta-value">Daguerre Hall <span>Museo Camera</span></p>
+    </div>
+    <div class="meta-item">
+      <p class="meta-label">When</p>
+      <p class="meta-value">8 February 2026 <span>3:30–5:30 pm, 2 hours</span></p>
+    </div>
+    <div class="meta-item">
+      <p class="meta-label">Who</p>
+      <p class="meta-value">Adults <span>&amp; young adults 16+</span></p>
+    </div>
+  </div>
+
+
+  <!-- About section -->
+  <div class="section">
+    <p class="section-label">About the Workshop</p>
+    <h2>Memory, Material & the Art of Keeping</h2>
+    <p>
+      Photographs rarely exist alone. They are often accompanied by letters, tickets, notes, and
+      fragments of everyday life that carry personal meaning.
+    </p>
+    <p>
+      In this hands-on workshop, participants will transform these memories into sculptural keepsakes
+      by encasing photographs and personal ephemera within crystal-clear resin forms. Each participant
+      will create <strong>two unique resin objects</strong> while exploring memory, preservation, and
+      storytelling through material.
+    </p>
+
+    <div class="callout">
+      <strong>What to bring:</strong> Participants are encouraged to bring copies of photographs and
+      small personal items (up to 4 inches) such as letters, tickets, pressed flowers, or other paper
+      memorabilia.<br><br>
+      <strong>Please note:</strong> Resin requires approximately 24 hours to cure. Participants will
+      take their moulds home and demould the final pieces the following day.
+    </div>
+  </div>
+
+
+  <!-- Ornament -->
+  <div class="ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+
+
+  <!-- Registration Form section -->
+  <section class="form-section">
+    <div class="form-wrap">
+
+      <!-- Form header -->
+      <div class="form-header">
+        <p class="section-label">Registration</p>
+        <h2>Reserve your place</h2>
+        <p>Seats are limited. Complete this form to register for the workshop.</p>
+      </div>
+
+      <!-- Success screen (hidden until submit) -->
+      <div class="success-screen" id="successScreen">
+        <div class="success-icon">✓</div>
+        <h2>You're registered.</h2>
+        <p>Thank you for signing up. We've received your details and look forward to seeing you on <strong>8 February 2026</strong>.</p>
+        <p>Please complete your payment below to confirm your seat. Spots are filled in order of payment.</p>
+
+        <div class="payment-next">
+          <h3>Complete Payment</h3>
+          <div class="payment-step">
+            <span class="step-num">1</span>
+            <span>Transfer ₹3,200 via UPI or bank transfer to the details below.</span>
+          </div>
+          <div class="upi-block" id="upiDisplay">art@eikowa.com</div>
+          <div class="payment-step">
+            <span class="step-num">2</span>
+            <span>Send your payment screenshot to <strong>art@eikowa.com</strong> or WhatsApp <strong>+91 96437 00787</strong> with your name in the message.</span>
+          </div>
+          <div class="payment-step">
+            <span class="step-num">3</span>
+            <span>You'll receive a confirmation once payment is verified.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- The actual form -->
+      <form id="registrationForm" novalidate>
+
+        <!-- Personal details -->
+        <div class="form-divider"><span>Personal Details</span></div>
+
+        <div class="field-group">
+          <div class="field">
+            <label for="fullName">Full Name <span class="req">*</span></label>
+            <input type="text" id="fullName" name="fullName" placeholder="Your full name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="email">Email Address <span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="phone">Phone Number <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required autocomplete="tel">
+          </div>
+        </div>
+
+
+        <!-- Workshop questions -->
+        <div class="form-divider"><span>About Your Experience</span></div>
+
+        <div class="q-wrap">
+          <p class="q-label">Have you worked with resin before? <span class="req">*</span></p>
+          <div class="choice-group inline" id="resinGroup">
+            <label class="choice-label">
+              <input type="radio" name="resinExperience" value="Yes" required>
+              Yes
+            </label>
+            <label class="choice-label">
+              <input type="radio" name="resinExperience" value="No">
+              No
+            </label>
+          </div>
+        </div>
+
+        <div class="q-wrap">
+          <p class="q-label">What kind of materials are you planning to bring?</p>
+          <div class="choice-group" id="materialsGroup">
+            <label class="choice-label">
+              <input type="checkbox" name="materials" value="Photographs">
+              Photographs
+            </label>
+            <label class="choice-label">
+              <input type="checkbox" name="materials" value="Letters / notes">
+              Letters / notes
+            </label>
+            <label class="choice-label">
+              <input type="checkbox" name="materials" value="Tickets / receipts">
+              Tickets / receipts
+            </label>
+            <label class="choice-label">
+              <input type="checkbox" name="materials" value="Pressed flowers">
+              Pressed flowers
+            </label>
+            <label class="choice-label">
+              <input type="checkbox" name="materials" value="Maps / postcards">
+              Maps / postcards
+            </label>
+            <label class="choice-label" id="otherMaterialLabel">
+              <input type="checkbox" name="materials" value="Other" id="otherMaterialCheck">
+              Other: <input type="text" class="other-input" id="otherMaterialText" placeholder="please specify">
+            </label>
+          </div>
+        </div>
+
+        <!-- Acknowledgements -->
+        <div class="form-divider"><span>Acknowledgements</span></div>
+
+        <div class="ack-wrap">
+          <label class="ack-label">
+            <input type="checkbox" name="ackCuring" id="ackCuring" required>
+            I understand that resin takes 24 hours to cure and I will take my work home in a mould.
+          </label>
+          <label class="ack-label">
+            <input type="checkbox" name="ackSafety" id="ackSafety" required>
+            I agree to follow all safety instructions provided during the workshop.
+          </label>
+        </div>
+
+        <!-- Payment -->
+        <div class="form-divider"><span>Payment</span></div>
+
+        <div class="payment-block">
+          <h3>Workshop Fee</h3>
+          <p class="fee-line">₹3,200 <small>per participant</small></p>
+          <p style="font-size:0.85rem; color: var(--ink-mid); line-height:1.6; margin-bottom:1.5rem;">
+            Fee is inclusive of all materials, refreshments, tax, and a goody bag.
+            Scan the QR below to pay, then enter the account name or number used.
+          </p>
+
+          <div class="qr-block">
+            <div class="qr-placeholder">QR Code<br>goes here</div>
+            <p class="qr-caption"><strong>UPI / Bank Transfer</strong><br>Scan to pay ₹3,200</p>
+          </div>
+
+          <div class="field" style="margin-top:0.25rem;">
+            <label for="paymentRef">Account name / number used for payment <span class="req">*</span></label>
+            <input type="text" id="paymentRef" name="paymentRef" placeholder="e.g. Priya Sharma or 98765 43210" required>
+          </div>
+
+          <p class="payment-note" style="margin-top:1.25rem;">
+            Your seat is confirmed upon receipt of payment. Please ensure payment is made within 48 hours of registration. Cancellations made less than 72 hours before the workshop are non-refundable.
+          </p>
+        </div>
+
+
+        <!-- Submit -->
+        <div class="submit-row">
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <span class="btn-text">Register for the Workshop</span>
+            <span class="btn-spinner"></span>
+          </button>
+          <p class="form-note">
+            By submitting, you agree to Eikowa's privacy policy. Your details will not be shared with third parties.
+          </p>
+        </div>
+
+      </form><!-- /form -->
+
+    </div><!-- /form-wrap -->
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logos">
+      <img src="images/logo-eikowa.png" alt="Eikowa Contemporary" class="footer-logo-img">
+      <span class="footer-x">&times;</span>
+      <img src="images/logo-museo.png" alt="Museo Camera" class="footer-logo-img footer-logo-museo">
+    </div>
+    <p class="footer-tagline">A co-presentation by Eikowa Contemporary &amp; Museo Camera</p>
+    <p>
+      A29/5, DLF Phase 1, Gurgaon 122002<br>
+      <a href="mailto:art@eikowa.com">art@eikowa.com</a> &nbsp;&middot;&nbsp;
+      <a href="tel:+919643700787">+91 96437 00787</a>
+    </p>
+  </footer>
+
+
+  <script>
+    // ── Configuration ───────────────────────────────────────────────
+    // Replace this URL with your deployed Google Apps Script web app URL.
+    // See SETUP.md for instructions on how to create and deploy the script.
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwhsDGQigc6mlRfO_Wmi4fzcfnaj4hjZLoitWkq_l1pPyZMN6PI_5HfmlkSiLRR1e8q/exec';
+
+    // ── Other material "Other" input visibility ─────────────────────
+    const otherMaterialCheck = document.getElementById('otherMaterialCheck');
+    const otherMaterialText  = document.getElementById('otherMaterialText');
+
+    otherMaterialCheck.addEventListener('change', () => {
+      otherMaterialText.classList.toggle('visible', otherMaterialCheck.checked);
+      if (otherMaterialCheck.checked) otherMaterialText.focus();
+    });
+
+    // ── Form submission ─────────────────────────────────────────────
+    document.getElementById('registrationForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = this;
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const checked = (name) =>
+        [...form.querySelectorAll(`input[name="${name}"]:checked`)].map(el => el.value).join(', ');
+
+      const materialVals = [];
+      form.querySelectorAll('input[name="materials"]:checked').forEach(el => {
+        if (el.value === 'Other') {
+          const txt = otherMaterialText.value.trim();
+          materialVals.push(txt ? `Other: ${txt}` : 'Other');
+        } else {
+          materialVals.push(el.value);
+        }
+      });
+
+      const payload = {
+        timestamp:        new Date().toISOString(),
+        fullName:         form.fullName.value.trim(),
+        email:            form.email.value.trim(),
+        phone:            form.phone.value.trim(),
+        resinExperience:  checked('resinExperience'),
+        materials:        materialVals.join('; '),
+        ackCuring:        form.ackCuring.checked ? 'Yes' : 'No',
+        ackSafety:        form.ackSafety.checked ? 'Yes' : 'No',
+        paymentRef:       form.paymentRef.value.trim(),
+      };
+
+      // UI: loading state
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.classList.add('loading');
+
+      try {
+        // Send to Google Apps Script (no-cors because Apps Script doesn't send CORS headers)
+        await fetch(SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        // Show success screen (we assume success since no-cors gives opaque response)
+        form.style.display = 'none';
+        document.getElementById('successScreen').classList.add('visible');
+        window.scrollTo({ top: document.querySelector('.form-section').offsetTop - 80, behavior: 'smooth' });
+
+      } catch (err) {
+        btn.disabled = false;
+        btn.classList.remove('loading');
+        alert('Something went wrong. Please try again or email us at art@eikowa.com');
+        console.error(err);
+      }
+    });
+  </script>
+
+</body>
+</html>
