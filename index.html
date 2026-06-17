@@ -381,28 +381,31 @@
     .choice-group {
       display: flex;
       flex-direction: column;
-      gap: 0.6rem;
+      gap: 0.45rem;
       margin-top: 0.2rem;
     }
 
-    .choice-group.inline { flex-direction: row; flex-wrap: wrap; gap: 0.75rem; }
+    .choice-group.inline { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
+
+    .choice-group.columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem 2rem;
+    }
 
     .choice-label {
       display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
+      align-items: center;
+      gap: 0.6rem;
       cursor: pointer;
-      padding: 0.65rem 0.9rem;
-      border: 1px solid var(--rule);
-      border-radius: 2px;
-      background: var(--white);
-      transition: border-color 0.15s, background 0.15s;
       font-size: 0.9rem;
       color: var(--ink-mid);
       line-height: 1.4;
+      padding: 0.15rem 0;
     }
 
-    .choice-label:hover { border-color: var(--amber-lt); }
+    .choice-label:hover { color: var(--ink); }
+    .choice-label:has(input:checked) { color: var(--ink); }
 
     .choice-label input[type="radio"],
     .choice-label input[type="checkbox"] {
@@ -411,15 +414,15 @@
       width: 16px;
       height: 16px;
       min-width: 16px;
-      border: 1.5px solid var(--rule);
+      border: 1.5px solid #C8C2B0;
       border-radius: 50%;
-      margin-top: 1px;
       cursor: pointer;
       transition: all 0.15s;
       position: relative;
+      flex-shrink: 0;
     }
 
-    .choice-label input[type="checkbox"] { border-radius: 2px; }
+    .choice-label input[type="checkbox"] { border-radius: 3px; }
 
     .choice-label input[type="radio"]:checked,
     .choice-label input[type="checkbox"]:checked {
@@ -449,11 +452,6 @@
       top: 44%;
       left: 50%;
       transform: translate(-50%, -50%) rotate(-45deg);
-    }
-
-    .choice-label:has(input:checked) {
-      border-color: var(--amber-lt);
-      background: #FDF7F0;
     }
 
     /* Other input within a choice */
@@ -495,40 +493,37 @@
     .ack-wrap {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 0.65rem;
       margin-top: 0.5rem;
     }
 
     .ack-label {
       display: flex;
       align-items: flex-start;
-      gap: 0.8rem;
+      gap: 0.65rem;
       cursor: pointer;
       font-size: 0.88rem;
       color: var(--ink-mid);
-      line-height: 1.5;
-      padding: 0.75rem 1rem;
-      border: 1px solid var(--rule);
-      border-radius: 2px;
-      background: var(--white);
-      transition: border-color 0.15s, background 0.15s;
+      line-height: 1.55;
+      padding: 0.15rem 0;
     }
 
-    .ack-label:hover { border-color: var(--amber-lt); }
-    .ack-label:has(input:checked) { border-color: var(--amber-lt); background: #FDF7F0; }
+    .ack-label:hover { color: var(--ink); }
+    .ack-label:has(input:checked) { color: var(--ink); }
 
     .ack-label input[type="checkbox"] {
       appearance: none;
       -webkit-appearance: none;
-      width: 18px;
-      height: 18px;
-      min-width: 18px;
-      border: 1.5px solid var(--rule);
-      border-radius: 2px;
-      margin-top: 0.1rem;
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      border: 1.5px solid #C8C2B0;
+      border-radius: 3px;
+      margin-top: 0.2rem;
       cursor: pointer;
       transition: all 0.15s;
       position: relative;
+      flex-shrink: 0;
     }
 
     .ack-label input[type="checkbox"]:checked {
@@ -539,14 +534,33 @@
     .ack-label input[type="checkbox"]:checked::after {
       content: '';
       position: absolute;
-      width: 10px;
-      height: 6px;
-      border-left: 2px solid white;
-      border-bottom: 2px solid white;
+      width: 9px;
+      height: 5px;
+      border-left: 1.5px solid white;
+      border-bottom: 1.5px solid white;
       top: 44%;
       left: 50%;
       transform: translate(-50%, -50%) rotate(-45deg);
     }
+
+    /* ── Hero register button ─────────────────────────────────────── */
+    .btn-register {
+      display: inline-block;
+      margin-top: 1.75rem;
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--ink);
+      text-decoration: none;
+      padding: 0.85rem 2.25rem;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+
+    .btn-register:hover { background: var(--ink-mid); }
 
     /* ── Payment section ──────────────────────────────────────────── */
     .payment-block {
@@ -872,6 +886,7 @@
     <p class="collab-line">Eikowa Contemporary &times; Museo Camera &times; Harman Taneja</p>
     <h1>Preserving Memories:<br><em>Resin Time Capsules</em></h1>
     <p class="hero-sub">A hands-on workshop in sculptural memory-keeping</p>
+    <a href="#registration" class="btn-register">Register Now</a>
   </section>
 
 
@@ -922,7 +937,7 @@
 
 
   <!-- Registration Form section -->
-  <section class="form-section">
+  <section class="form-section" id="registration">
     <div class="form-wrap">
 
       <!-- Form header -->
@@ -998,7 +1013,7 @@
 
         <div class="q-wrap">
           <p class="q-label">What kind of materials are you planning to bring?</p>
-          <div class="choice-group" id="materialsGroup">
+          <div class="choice-group columns" id="materialsGroup">
             <label class="choice-label">
               <input type="checkbox" name="materials" value="Photographs">
               Photographs
@@ -1062,7 +1077,7 @@
           </div>
 
           <p class="payment-note" style="margin-top:1.25rem;">
-            Your seat is confirmed upon receipt of payment. Please ensure payment is made within 48 hours of registration. Cancellations made less than 72 hours before the workshop are non-refundable.
+            Your seat is confirmed upon receipt of payment. We will confirm after tallying the payment and your registration within 24-48 hours.
           </p>
         </div>
 
