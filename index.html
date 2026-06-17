@@ -801,6 +801,74 @@
       text-underline-offset: 2px;
     }
 
+    /* ── About the artist ────────────────────────────────────────── */
+    .artist-section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: clamp(2.5rem, 6vw, 4rem) 2rem;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .artist-photo {
+      width: 200px;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(1);
+      display: block;
+    }
+
+    .artist-text .section-label { margin-bottom: 0.75rem; }
+
+    .artist-text h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(1.4rem, 3vw, 1.85rem);
+      color: var(--ink);
+      margin-bottom: 1.1rem;
+      line-height: 1.2;
+    }
+
+    .artist-text p {
+      font-size: 0.92rem;
+      color: var(--ink-mid);
+      line-height: 1.85;
+    }
+
+    .artist-text p + p { margin-top: 0.9rem; }
+
+    .artist-instagram {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 1.25rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 0.1rem;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .artist-instagram:hover { color: var(--amber); border-color: var(--amber); }
+
+    @media (max-width: 560px) {
+      .artist-section {
+        grid-template-columns: 1fr;
+      }
+      .artist-photo {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-position: center 20%;
+      }
+    }
+
     /* ── QR code placeholder ──────────────────────────────────────── */
     .qr-block {
       display: flex;
@@ -919,6 +987,43 @@
 
   <!-- Ornament -->
   <div class="ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+
+
+  <!-- About the Artist -->
+  <div style="border-top: 1px solid var(--rule);">
+    <div class="artist-section">
+      <img src="images/harman-taneja.jpg" alt="Harman Taneja" class="artist-photo">
+      <div class="artist-text">
+        <p class="section-label">About the Artist</p>
+        <h2>Harman Taneja</h2>
+        <p>
+          Harman Taneja is a Delhi-based artist whose practice explores memory, displacement,
+          domestic spaces, and the emotional lives of objects. Trained as an architect, she works
+          primarily with sculpture, resin, photography, and found materials, creating works that
+          investigate how personal histories become embedded within everyday forms.
+        </p>
+        <p>
+          Her work has been exhibited at India Art Fair, Delhi Contemporary Art Week, Space 118,
+          and other exhibitions across India. She has participated in residencies including
+          Niv Art Gallery, Space Studio Vadodara, and Art for Change India, and currently runs
+          her own studio in New Delhi.
+        </p>
+        <p>
+          Through her workshops, Harman introduces participants to resin as both a material and
+          a storytelling medium, encouraging them to preserve photographs and personal objects
+          in sculptural forms that reflect memory, identity, and lived experience.
+        </p>
+        <a href="https://www.instagram.com/harmantaneja" target="_blank" rel="noopener" class="artist-instagram">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+          </svg>
+          @harmantaneja
+        </a>
+      </div>
+    </div>
+  </div>
 
 
   <!-- Registration Form section -->
