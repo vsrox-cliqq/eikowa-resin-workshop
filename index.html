@@ -913,6 +913,10 @@
       .meta-item:nth-child(2) { border-right: none; }
       .meta-item:nth-child(3) { border-top: 1px solid var(--rule); }
     }
+
+    @media (max-width: 480px) {
+      .qr-payment-row { grid-template-columns: 1fr !important; }
+    }
   </style>
 </head>
 
@@ -1133,14 +1137,15 @@
             Please scan the QR code below and complete payment before submitting this form. Then enter the account name or number you paid from.
           </p>
 
-          <div class="qr-block">
-            <img src="images/qr-payment.jpg" alt="QR code for UPI payment" style="width:140px;height:140px;object-fit:contain;border-radius:2px;">
-            <p class="qr-caption"><strong>UPI / Bank Transfer</strong><br>Scan to pay ₹3,200</p>
-          </div>
-
-          <div class="field" style="margin-top:0.25rem;">
-            <label for="paymentRef">Account name / number used for payment <span class="req">*</span></label>
-            <input type="text" id="paymentRef" name="paymentRef" placeholder="e.g. Priya Sharma or 98765 43210" required>
+          <div class="qr-payment-row" style="display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:center;margin-top:0.5rem;">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:0.6rem;">
+              <img src="images/qr-payment.jpg" alt="QR code for UPI payment" style="width:200px;height:200px;object-fit:contain;border-radius:2px;display:block;">
+              <p style="font-size:0.8rem;color:var(--ink-mid);text-align:center;letter-spacing:0.01em;">UPI ID: <strong style="color:var(--ink);font-weight:500;">9643700787@hdfc</strong></p>
+            </div>
+            <div class="field">
+              <label for="paymentRef">Account name / number used for payment <span class="req">*</span></label>
+              <input type="text" id="paymentRef" name="paymentRef" placeholder="e.g. Priya Sharma or 98765 43210" required>
+            </div>
           </div>
 
           <p class="payment-note" style="margin-top:1.25rem;">
