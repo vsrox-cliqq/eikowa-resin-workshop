@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Preserving Memories: Resin Time Capsules | Eikowa Contemporary</title>
-  <meta name="description" content="A hands-on workshop where participants transform photographs and personal ephemera into sculptural resin keepsakes. 2 August 2026, Daguerre Hall, Museo Camera.">
+  <title>Painting Workshop with Swati Pasari | Eikowa Art Gallery</title>
+  <meta name="description" content="A free painting workshop where you paint on a fiber-made bud-like sculpture and take it home. 19 August 2026, CCA, Bikaner House, New Delhi.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,7 +46,7 @@
     /* ── Site header ──────────────────────────────────────────────── */
     .site-header {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       padding: 1.25rem 2.5rem;
       border-bottom: 1px solid var(--rule);
@@ -66,24 +66,10 @@
     }
 
     .logo-eikowa  { height: 52px; }
-    .logo-museo   { height: 56px; }
-
-    .header-center {
-      font-family: var(--sans);
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--rule);
-      text-align: center;
-      white-space: nowrap;
-      padding: 0 1rem;
-    }
 
     @media (max-width: 540px) {
       .site-header { padding: 1rem 1.25rem; }
       .logo-eikowa { height: 36px; }
-      .logo-museo  { height: 40px; }
-      .header-center { display: none; }
     }
 
     /* ── Hero image ───────────────────────────────────────────────── */
@@ -99,7 +85,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center center;
+      object-position: center 25%;
       display: block;
     }
 
@@ -439,23 +425,6 @@
       transform: translate(-50%, -50%) rotate(-45deg);
     }
 
-    /* Other input within a choice */
-    .other-input {
-      border: none;
-      border-bottom: 1px solid var(--rule);
-      border-radius: 0;
-      padding: 0.2rem 0.4rem;
-      font-family: var(--sans);
-      font-size: 0.88rem;
-      color: var(--ink);
-      background: transparent;
-      outline: none;
-      width: 140px;
-      display: none;
-    }
-
-    .other-input.visible { display: inline-block; }
-
     /* Question wrapper */
     .q-wrap {
       margin-bottom: 1.5rem;
@@ -547,45 +516,19 @@
 
     .btn-register:hover { background: var(--ink-mid); }
 
-    /* ── Payment section ──────────────────────────────────────────── */
-    .payment-block {
-      background: var(--white);
-      border: 1px solid var(--rule);
-      border-radius: 2px;
-      padding: 1.75rem;
-      margin-top: 2.25rem;
-    }
-
-    .payment-block h3 {
-      font-family: var(--serif);
-      font-weight: 500;
-      font-size: 1.2rem;
-      color: var(--ink);
-      margin-bottom: 0.25rem;
-    }
-
-    .payment-block .fee-line {
-      font-family: var(--serif);
-      font-size: 2rem;
-      font-weight: 300;
-      color: var(--ink);
-      margin: 0.5rem 0 1rem;
-      letter-spacing: -0.01em;
-    }
-
-    .payment-block .fee-line small {
-      font-size: 1rem;
-      color: var(--ink-lt);
+    /* ── Free badge ───────────────────────────────────────────────── */
+    .free-badge {
+      display: inline-block;
       font-family: var(--sans);
-      font-weight: 300;
-    }
-
-    .payment-note {
-      font-size: 0.82rem;
-      color: var(--ink-lt);
-      line-height: 1.6;
-      border-top: 1px solid var(--rule);
-      padding-top: 1rem;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #2D6A2E;
+      background: #EDF7ED;
+      border: 1px solid #B8D4B8;
+      padding: 0.3rem 0.85rem;
+      border-radius: 2px;
       margin-top: 1rem;
     }
 
@@ -697,61 +640,6 @@
       line-height: 1.7;
     }
 
-    .payment-next {
-      max-width: 480px;
-      margin: 2rem auto 0;
-      background: var(--white);
-      border: 1px solid var(--rule);
-      border-radius: 2px;
-      padding: 1.75rem;
-      text-align: left;
-    }
-
-    .payment-next h3 {
-      font-family: var(--serif);
-      font-size: 1.15rem;
-      font-weight: 500;
-      color: var(--ink);
-      margin-bottom: 1rem;
-    }
-
-    .payment-step {
-      display: flex;
-      gap: 0.85rem;
-      margin-bottom: 0.9rem;
-      font-size: 0.88rem;
-      color: var(--ink-mid);
-      line-height: 1.5;
-    }
-
-    .step-num {
-      width: 22px;
-      height: 22px;
-      min-width: 22px;
-      border-radius: 50%;
-      background: var(--amber);
-      color: white;
-      font-size: 0.7rem;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 0.05rem;
-    }
-
-    .upi-block {
-      background: var(--cream);
-      border: 1px dashed var(--amber-lt);
-      border-radius: 2px;
-      padding: 0.85rem 1rem;
-      margin: 1rem 0;
-      font-family: var(--sans);
-      font-size: 0.92rem;
-      color: var(--ink);
-      font-weight: 500;
-      letter-spacing: 0.02em;
-    }
-
     /* ── Footer ───────────────────────────────────────────────────── */
     footer {
       border-top: 1px solid var(--rule);
@@ -773,13 +661,6 @@
       width: auto;
       opacity: 0.55;
       filter: grayscale(1);
-    }
-
-    .footer-logo-museo { height: 40px; }
-
-    .footer-x {
-      color: var(--rule);
-      font-size: 0.75rem;
     }
 
     .footer-tagline {
@@ -869,53 +750,11 @@
       }
     }
 
-    /* ── QR code placeholder ──────────────────────────────────────── */
-    .qr-block {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 1.5rem;
-      border: 1px dashed var(--amber-lt);
-      border-radius: 2px;
-      background: var(--cream);
-      margin-bottom: 1.25rem;
-    }
-
-    .qr-placeholder {
-      width: 140px;
-      height: 140px;
-      background: var(--white);
-      border: 1px solid var(--rule);
-      border-radius: 2px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      color: var(--ink-lt);
-      text-align: center;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .qr-caption {
-      font-size: 0.8rem;
-      color: var(--ink-mid);
-      text-align: center;
-      line-height: 1.5;
-    }
-
-    .qr-caption strong { color: var(--ink); font-weight: 500; }
-
     /* ── Utility ──────────────────────────────────────────────────── */
     @media (max-width: 600px) {
       .meta-strip { grid-template-columns: 1fr 1fr; }
       .meta-item:nth-child(2) { border-right: none; }
       .meta-item:nth-child(3) { border-top: 1px solid var(--rule); }
-    }
-
-    @media (max-width: 480px) {
-      .qr-payment-row { grid-template-columns: 1fr !important; }
     }
   </style>
 </head>
@@ -924,25 +763,18 @@
 
   <!-- Site header -->
   <header class="site-header">
-    <a href="https://www.museocamera.in" class="header-logo" target="_blank" rel="noopener" aria-label="Museo Camera">
-      <img src="images/logo-museo.png" alt="Museo Camera, Centre for the Photographic Arts" class="logo-museo" width="240" height="160">
-    </a>
-    <span class="header-center">&times;</span>
-    <a href="https://contemporary.eikowa.com" class="header-logo" target="_blank" rel="noopener" aria-label="Eikowa Contemporary">
-      <img src="images/logo-eikowa.png" alt="Eikowa Contemporary" class="logo-eikowa" width="100" height="89">
+    <a href="https://contemporary.eikowa.com" class="header-logo" target="_blank" rel="noopener" aria-label="Eikowa Art Gallery">
+      <img src="images/logo-eikowa.png" alt="Eikowa Art Gallery" class="logo-eikowa" width="100" height="89">
     </a>
   </header>
 
-  <!-- Hero image -->
-  <div class="hero-image">
-    <img src="images/hero.jpg" alt="Grid of round resin coasters preserving dried flowers, petals, and leaves" width="1600" height="700" fetchpriority="high">
-  </div>
-
   <!-- Hero -->
   <section class="hero">
-    <p class="collab-line">Museo Camera &times; Eikowa Contemporary &times; Harman Taneja</p>
-    <h1>Preserving Memories:<br><em>Resin Time Capsules</em></h1>
-    <p class="hero-sub">A hands-on workshop in sculptural memory-keeping</p>
+    <p class="collab-line">Eikowa Art Gallery presents</p>
+    <h1>Painting Workshop<br><em>with Swati Pasari</em></h1>
+    <p class="hero-sub">Paint your own fiber sculpture and take it home</p>
+    <span class="free-badge">Free Workshop</span>
+    <br>
     <a href="#registration" class="btn-register">Register Now</a>
   </section>
 
@@ -951,15 +783,15 @@
   <div class="meta-strip">
     <div class="meta-item">
       <p class="meta-label">Where</p>
-      <p class="meta-value">Daguerre Hall <span>Museo Camera</span></p>
+      <p class="meta-value">CCA, Bikaner House <span>New Delhi</span></p>
     </div>
     <div class="meta-item">
       <p class="meta-label">When</p>
-      <p class="meta-value">2 August 2026 <span>3:30–5:30 pm, 2 hours</span></p>
+      <p class="meta-value">19 August 2026 <span>Wednesday, 3:00–5:00 PM</span></p>
     </div>
     <div class="meta-item">
-      <p class="meta-label">Who</p>
-      <p class="meta-value">Adults <span>&amp; young adults 16+</span></p>
+      <p class="meta-label">Fee</p>
+      <p class="meta-value">Free <span>Limited seats, first come first served</span></p>
     </div>
   </div>
 
@@ -967,24 +799,22 @@
   <!-- About section -->
   <div class="section">
     <p class="section-label">About the Workshop</p>
-    <h2>Cast in Time</h2>
+    <h2>Paint Your Own Sculpture</h2>
     <p>
-      Photography gave us the first way to hold a moment still. A face, a room, a summer afternoon
-      that felt endless, frozen before it could slip away. And yet photographs fade, get buried in
-      folders, tucked into drawers.
+      Join artist Swati Pasari for an afternoon of painting at CCA, Bikaner House.
+      In this hands-on session, each participant will paint on a fiber-made bud-like
+      sculpture, bringing it to life with colour, texture, and personal expression.
     </p>
     <p>
-      Resin offers permanence. In this workshop, you will cast your photographs and
-      personal fragments into clear sculptural forms that catch light, sit on a desk, and simply
-      endure. Each participant leaves with <strong>two handmade objects</strong>, artifacts made to
-      outlast their moment.
+      No prior experience is needed. All materials will be provided, and you will take
+      your finished sculpture home at the end of the session.
     </p>
 
     <div class="callout">
-      <strong>What to bring:</strong> Printed photographs or small personal items up to 4 inches.
-      Letters, tickets, pressed flowers, postcards, maps, or any paper memorabilia worth preserving.<br><br>
-      <strong>Please note:</strong> Resin cures in 24 hours. You will take your moulds home and
-      demould the finished pieces the following day.
+      <strong>All materials provided:</strong> Paints, brushes, and the fiber sculpture will be
+      ready for you at the venue. Just bring yourself and your creativity.<br><br>
+      <strong>Please note:</strong> Arrive 10–15 minutes early for a smooth start. Seats are
+      limited and allocated on a first-come, first-served basis.
     </div>
   </div>
 
@@ -996,28 +826,20 @@
   <!-- About the Artist -->
   <div style="border-top: 1px solid var(--rule);">
     <div class="artist-section">
-      <img src="images/harman-taneja.jpg" alt="Harman Taneja" class="artist-photo" width="267" height="400" loading="lazy">
+      <img src="images/swati-pasari.jpg" alt="Swati Pasari" class="artist-photo" width="267" height="400" loading="lazy">
       <div class="artist-text">
         <p class="section-label">About the Artist</p>
-        <h2>Harman Taneja</h2>
+        <h2>Swati Pasari</h2>
         <p>
-          Harman Taneja is a Delhi-based artist and architect whose work explores memory through
-          sculpture, resin, and photography. She investigates how personal histories become
-          embedded in everyday objects.
+          Swati Pasari is a multidisciplinary artist whose vibrant work spans painting,
+          sculpture, and mixed media. Her practice explores colour, form, and the
+          interplay between organic shapes and bold expression.
         </p>
         <p>
-          Her work has been shown at India Art Fair, Delhi Contemporary Art Week, and Space 118.
-          She has completed residencies at Niv Art Gallery, Space Studio Vadodara, and Art for
-          Change India, and runs her studio in New Delhi.
+          Through her workshops, Swati invites participants to discover their own creative
+          voice, guiding them through intuitive mark-making and the joy of working with
+          colour on three-dimensional forms.
         </p>
-        <a href="https://www.instagram.com/harmantaneja" target="_blank" rel="noopener" class="artist-instagram">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-            <circle cx="12" cy="12" r="4"/>
-            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
-          </svg>
-          @harmantaneja
-        </a>
       </div>
     </div>
   </div>
@@ -1030,17 +852,17 @@
       <!-- Form header -->
       <div class="form-header">
         <p class="section-label">Registration</p>
-        <h2>Reserve your place</h2>
-        <p>Seats are limited. Complete this form to register for the workshop.</p>
+        <h2>Reserve your seat</h2>
+        <p>This is a free workshop with limited seats. Complete this form to register.</p>
       </div>
 
       <!-- Success screen (hidden until submit) -->
       <div class="success-screen" id="successScreen">
-        <div class="success-icon">✓</div>
+        <div class="success-icon">&#10003;</div>
         <h2>You're registered.</h2>
-        <p>Thank you for registering. We've received your details and payment reference.</p>
-        <p>We will confirm your seat within <strong>24-48 hours</strong> after tallying your payment and registration.</p>
-        <p>See you on <strong>2 August 2026</strong> at Daguerre Hall, Museo Camera.</p>
+        <p>Thank you for signing up. Your seat has been reserved.</p>
+        <p>See you on <strong>Wednesday, 19 August 2026</strong> at CCA, Bikaner House, New Delhi.</p>
+        <p>Please arrive <strong>10–15 minutes early</strong> for a smooth start.</p>
       </div>
 
       <!-- The actual form -->
@@ -1066,48 +888,40 @@
 
 
         <!-- Workshop questions -->
-        <div class="form-divider"><span>About Your Experience</span></div>
+        <div class="form-divider"><span>About You</span></div>
 
         <div class="q-wrap">
-          <p class="q-label">Have you worked with resin before? <span class="req">*</span></p>
-          <div class="choice-group inline" id="resinGroup">
+          <p class="q-label">Have you attended a painting workshop before? <span class="req">*</span></p>
+          <div class="choice-group inline" id="experienceGroup">
             <label class="choice-label">
-              <input type="radio" name="resinExperience" value="Yes" required>
+              <input type="radio" name="paintingExperience" value="Yes" required>
               Yes
             </label>
             <label class="choice-label">
-              <input type="radio" name="resinExperience" value="No">
+              <input type="radio" name="paintingExperience" value="No">
               No
             </label>
           </div>
         </div>
 
         <div class="q-wrap">
-          <p class="q-label">What kind of materials are you planning to bring?</p>
-          <div class="choice-group columns" id="materialsGroup">
+          <p class="q-label">How did you hear about this workshop? <span class="req">*</span></p>
+          <div class="choice-group columns" id="referralGroup">
             <label class="choice-label">
-              <input type="checkbox" name="materials" value="Photographs">
-              Photographs
+              <input type="radio" name="referral" value="Instagram" required>
+              Instagram
             </label>
             <label class="choice-label">
-              <input type="checkbox" name="materials" value="Letters / notes">
-              Letters / notes
+              <input type="radio" name="referral" value="WhatsApp">
+              WhatsApp
             </label>
             <label class="choice-label">
-              <input type="checkbox" name="materials" value="Tickets / receipts">
-              Tickets / receipts
+              <input type="radio" name="referral" value="Friend / word of mouth">
+              Friend / word of mouth
             </label>
             <label class="choice-label">
-              <input type="checkbox" name="materials" value="Pressed flowers">
-              Pressed flowers
-            </label>
-            <label class="choice-label">
-              <input type="checkbox" name="materials" value="Maps / postcards">
-              Maps / postcards
-            </label>
-            <label class="choice-label" id="otherMaterialLabel">
-              <input type="checkbox" name="materials" value="Other" id="otherMaterialCheck">
-              Other: <input type="text" class="other-input" id="otherMaterialText" placeholder="please specify">
+              <input type="radio" name="referral" value="Other">
+              Other
             </label>
           </div>
         </div>
@@ -1117,40 +931,13 @@
 
         <div class="ack-wrap">
           <label class="ack-label">
-            <input type="checkbox" name="ackCuring" id="ackCuring" required>
-            I understand that resin takes 24 hours to cure and I will take my work home in a mould.
+            <input type="checkbox" name="ackSeats" id="ackSeats" required>
+            I understand that seats are limited and allocated on a first-come, first-served basis.
           </label>
           <label class="ack-label">
             <input type="checkbox" name="ackSafety" id="ackSafety" required>
-            I agree to follow all safety instructions provided during the workshop.
+            I agree to follow all instructions provided during the workshop.
           </label>
-        </div>
-
-        <!-- Payment -->
-        <div class="form-divider"><span>Payment</span></div>
-
-        <div class="payment-block">
-          <h3>Workshop Fee</h3>
-          <p class="fee-line">₹3,200 <small>per participant</small></p>
-          <p style="font-size:0.85rem; color: var(--ink-mid); line-height:1.6; margin-bottom:1.5rem;">
-            Fee is inclusive of all materials, refreshments, tax, and a goody bag.
-            Please scan the QR code below and complete payment before submitting this form. Then enter the account name or number you paid from.
-          </p>
-
-          <div class="qr-payment-row" style="display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:center;margin-top:0.5rem;">
-            <div style="display:flex;flex-direction:column;align-items:center;gap:0.6rem;">
-              <img src="images/qr-payment.png" alt="QR code for UPI payment" width="440" height="440" loading="lazy" style="width:220px;height:220px;object-fit:contain;display:block;">
-              <p style="font-size:0.8rem;color:var(--ink-mid);text-align:center;letter-spacing:0.01em;">UPI ID: <strong style="color:var(--ink);font-weight:500;">9643700787@hdfc</strong></p>
-            </div>
-            <div class="field">
-              <label for="paymentRef">Account name / number used for payment <span class="req">*</span></label>
-              <input type="text" id="paymentRef" name="paymentRef" placeholder="e.g. Priya Sharma or 98765 43210" required>
-            </div>
-          </div>
-
-          <p class="payment-note" style="margin-top:1.25rem;">
-            Your seat is confirmed upon receipt of payment. We will confirm after tallying the payment and your registration within 24-48 hours.
-          </p>
         </div>
 
 
@@ -1174,13 +961,10 @@
   <!-- Footer -->
   <footer>
     <div class="footer-logos">
-      <img src="images/logo-museo.png" alt="Museo Camera" class="footer-logo-img footer-logo-museo" width="240" height="160" loading="lazy">
-      <span class="footer-x">&times;</span>
-      <img src="images/logo-eikowa.png" alt="Eikowa Contemporary" class="footer-logo-img">
+      <img src="images/logo-eikowa.png" alt="Eikowa Art Gallery" class="footer-logo-img">
     </div>
-    <p class="footer-tagline">A co-presentation by Museo Camera &amp; Eikowa Contemporary</p>
+    <p class="footer-tagline">A presentation by Eikowa Art Gallery</p>
     <p>
-      A29/5, DLF Phase 1, Gurgaon 122002<br>
       <a href="mailto:art@eikowa.com">art@eikowa.com</a> &nbsp;&middot;&nbsp;
       <a href="tel:+919643700787">+91 96437 00787</a>
     </p>
@@ -1189,18 +973,7 @@
 
   <script>
     // ── Configuration ───────────────────────────────────────────────
-    // Replace this URL with your deployed Google Apps Script web app URL.
-    // See SETUP.md for instructions on how to create and deploy the script.
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwhsDGQigc6mlRfO_Wmi4fzcfnaj4hjZLoitWkq_l1pPyZMN6PI_5HfmlkSiLRR1e8q/exec';
-
-    // ── Other material "Other" input visibility ─────────────────────
-    const otherMaterialCheck = document.getElementById('otherMaterialCheck');
-    const otherMaterialText  = document.getElementById('otherMaterialText');
-
-    otherMaterialCheck.addEventListener('change', () => {
-      otherMaterialText.classList.toggle('visible', otherMaterialCheck.checked);
-      if (otherMaterialCheck.checked) otherMaterialText.focus();
-    });
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw6eXmpi9Yx9Vbkbrxv8pPSa-AVbK3XpQAmoCP5iCudyMuAAciG0_4jQycaxWr16ZqJNw/exec';
 
     // ── Form submission ─────────────────────────────────────────────
     document.getElementById('registrationForm').addEventListener('submit', async function(e) {
@@ -1215,26 +988,15 @@
       const checked = (name) =>
         [...form.querySelectorAll(`input[name="${name}"]:checked`)].map(el => el.value).join(', ');
 
-      const materialVals = [];
-      form.querySelectorAll('input[name="materials"]:checked').forEach(el => {
-        if (el.value === 'Other') {
-          const txt = otherMaterialText.value.trim();
-          materialVals.push(txt ? `Other: ${txt}` : 'Other');
-        } else {
-          materialVals.push(el.value);
-        }
-      });
-
       const payload = {
-        timestamp:        new Date().toISOString(),
-        fullName:         form.fullName.value.trim(),
-        email:            form.email.value.trim(),
-        phone:            form.phone.value.trim(),
-        resinExperience:  checked('resinExperience'),
-        materials:        materialVals.join('; '),
-        ackCuring:        form.ackCuring.checked ? 'Yes' : 'No',
-        ackSafety:        form.ackSafety.checked ? 'Yes' : 'No',
-        paymentRef:       form.paymentRef.value.trim(),
+        timestamp:           new Date().toISOString(),
+        fullName:            form.fullName.value.trim(),
+        email:               form.email.value.trim(),
+        phone:               form.phone.value.trim(),
+        paintingExperience:  checked('paintingExperience'),
+        referral:            checked('referral'),
+        ackSeats:            form.ackSeats.checked ? 'Yes' : 'No',
+        ackSafety:           form.ackSafety.checked ? 'Yes' : 'No',
       };
 
       // UI: loading state
@@ -1243,7 +1005,6 @@
       btn.classList.add('loading');
 
       try {
-        // Send to Google Apps Script (no-cors because Apps Script doesn't send CORS headers)
         await fetch(SCRIPT_URL, {
           method: 'POST',
           mode: 'no-cors',
@@ -1251,7 +1012,6 @@
           body: JSON.stringify(payload),
         });
 
-        // Show success screen (we assume success since no-cors gives opaque response)
         form.style.display = 'none';
         document.getElementById('successScreen').classList.add('visible');
         window.scrollTo({ top: document.querySelector('.form-section').offsetTop - 80, behavior: 'smooth' });
