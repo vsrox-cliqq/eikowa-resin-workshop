@@ -891,8 +891,8 @@
       <!-- Form header -->
       <div class="form-header">
         <p class="section-label">Registration</p>
-        <h2>Reserve your seat</h2>
-        <p>Seats are limited. Complete this form and payment to register for the workshop.</p>
+        <h2 id="formHeadline">Reserve your seat</h2>
+        <p id="formLead">Seats are limited. Complete this form and payment to register for the workshop.</p>
       </div>
 
       <!-- Success screen (hidden until submit) -->
@@ -1079,6 +1079,8 @@
         });
 
         form.style.display = 'none';
+        document.getElementById('formHeadline').style.display = 'none';
+        document.getElementById('formLead').style.display = 'none';
         document.getElementById('successScreen').classList.add('visible');
         window.scrollTo({ top: document.querySelector('.form-section').offsetTop - 80, behavior: 'smooth' });
 
